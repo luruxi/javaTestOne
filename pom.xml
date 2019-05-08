@@ -40,7 +40,6 @@
             <artifactId>tomcat-embed-jasper</artifactId>
             <scope>provided</scope>
         </dependency>
-
         <!--通过注解简化操作，构造函数，set和get方法，关闭流，日志，空指针判断等，前台编译器也要安装lombok插件-->
         <dependency>
             <groupId>org.projectlombok</groupId>
