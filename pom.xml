@@ -11,6 +11,7 @@
     <groupId>enn.testone</groupId>
     <artifactId>testone</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>testone</name>
     <description>Testone project for Spring Boot</description>
 
@@ -50,12 +51,24 @@
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>2.0.1</version>
+            <version>RELEASE</version>
+        </dependency>
+        <!--mapper-->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>RELEASE</version>
         </dependency>
         <!-- jdbc模块 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.tomcat</groupId>
+                    <artifactId>tomcat-jdbc</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -105,18 +118,25 @@
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.5</version>
+                <version>1.3.2</version>
                 <configuration>
-                    <configurationFile>src/main/resources/generatorConfig.xml</configurationFile>
-                    <verbose>true</verbose>
+                    <configurationFile>${basedir}/src/main/resources/generator/generatorConfig.xml</configurationFile>
                     <overwrite>true</overwrite>
+                    <verbose>true</verbose>
                 </configuration>
                 <dependencies>
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>5.1.46</version>
+                        <version>5.1.40</version>
+                        <!--<scope>runtime</scope>-->
                     </dependency>
+                    <dependency>
+                        <groupId>tk.mybatis</groupId>
+                        <artifactId>mapper</artifactId>
+                        <version>3.4.0</version>
+                    </dependency>
+
                 </dependencies>
             </plugin>
         </plugins>
