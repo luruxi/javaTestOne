@@ -1,8 +1,9 @@
 package enn.testone.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
-public class Employee {
+public class Employee implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -14,6 +15,17 @@ public class Employee {
     private String sex;
 
     private String bumen;
+
+    public Employee() {
+
+    }
+
+    public Employee(Integer age, String name, String sex, String bumen) {
+        this.age = age;
+        this.name = name;
+        this.sex = sex;
+        this.bumen = bumen;
+    }
 
     /**
      * @return id
@@ -84,4 +96,5 @@ public class Employee {
     public void setBumen(String bumen) {
         this.bumen = bumen;
     }
+
 }

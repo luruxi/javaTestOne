@@ -11,4 +11,9 @@
     <result column="sex" property="sex" jdbcType="VARCHAR" />
     <result column="bumen" property="bumen" jdbcType="VARCHAR" />
   </resultMap>
+
+  <select id="getOneEmpById" parameterType="int" resultMap="BaseResultMap">
+      select * from employee where id=#{id}
+  </select>
+
 </mapper>
