@@ -2,7 +2,7 @@ package enn.testone.entity;
 
 import org.springframework.data.elasticsearch.annotations.Document;
 
-@Document(indexName = "mysdetest",type = "book")
+//@Document(indexName = "mysdetest",type = "book")
 public class Book {
     private Integer id;
     private String name;
