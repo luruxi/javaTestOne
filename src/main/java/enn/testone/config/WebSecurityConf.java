@@ -1,5 +1,6 @@
 package enn.testone.config;
 
+import enn.testone.utils.PassEncoder;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.*;
@@ -41,8 +42,8 @@ public class WebSecurityConf extends WebSecurityConfigurerAdapter {
     //定义认证规则
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        //super.configure(auth);
-        auth.inMemoryAuthentication()
+        //super.configure(auth);--springsecurity5---passwordEncoder(new PassEncoder())
+        auth.inMemoryAuthentication().passwordEncoder(new PassEncoder())
                 .withUser("zhangsan").password("123456").roles("VIP1","VIP2")
                 .and()
                 .withUser("lisi").password("123456").roles("VIP2","VIP3")

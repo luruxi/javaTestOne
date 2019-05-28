@@ -22,16 +22,21 @@
         <elasticsearch.version>2.4.5</elasticsearch.version>
 
         <!--限制thymeleaf的版本-->
-        <!--<thymeleaf.version>3.0.9.RELEASE</thymeleaf.version>
-        <thymeleaf-layout-dialect.version>2.3.0</thymeleaf-layout-dialect.version>
-        <thymeleaf-extras-springsecurity4.version>3.0.2.RELEASE</thymeleaf-extras-springsecurity4.version>-->
+        <!--<thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
+        <thymeleaf-layout-dialect.version>2.4.1</thymeleaf-layout-dialect.version>
+        <thymeleaf-extras-springsecurity5.version>3.0.4.RELEASE</thymeleaf-extras-springsecurity5.version>-->
     </properties>
 
     <dependencies>
-        <!--thymeleaf和security整合依赖-->
-        <dependency>
+        <!--thymeleaf和security整合依赖  springsecurity4不兼容springboot2.x-->
+        <!--<dependency>
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity4</artifactId>
+        </dependency>-->
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+            <!--<version>3.0.4.RELEASE</version>-->
         </dependency>
         <!--thymeleaf模板-->
         <dependency>
