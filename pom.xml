@@ -18,14 +18,31 @@
     <properties>
         <java.version>1.8</java.version>
         <!--设置spring-data-elasticsearch版本-->
-        <!--<elasticsearch.version>2.4.5</elasticsearch.version>-->
+        <!--不设置这个版本，会和elasticsearch服务器的链接报错-->
+        <elasticsearch.version>2.4.5</elasticsearch.version>
+
+        <!--限制thymeleaf的版本-->
+        <!--<thymeleaf.version>3.0.9.RELEASE</thymeleaf.version>
+        <thymeleaf-layout-dialect.version>2.3.0</thymeleaf-layout-dialect.version>
+        <thymeleaf-extras-springsecurity4.version>3.0.2.RELEASE</thymeleaf-extras-springsecurity4.version>-->
     </properties>
 
     <dependencies>
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-thymeleaf</artifactId>-->
-        <!--</dependency>-->
+        <!--thymeleaf和security整合依赖-->
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity4</artifactId>
+        </dependency>
+        <!--thymeleaf模板-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <!--security安全认证引入 “认证”（Authentication） “授权”（Authorization）-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
         <!--web支持-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
