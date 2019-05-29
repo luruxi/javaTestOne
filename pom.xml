@@ -174,12 +174,16 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+            <!--测试增加设置elasticsearch相关版本-->
+            <version>2.1.5.RELEASE</version>
         </dependency>
         <!--添加如下依赖才能使用@Document等注解  -  应该是spring版本的问题  -->
-        <!--<dependency>
+        <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-elasticsearch</artifactId>
-        </dependency>-->
+            <!--测试增加设置elasticsearch相关版本-->
+            <version>3.1.8.RELEASE</version>
+        </dependency>
 
         <!-- Elasticsearch-jest方法使用ES的依赖jest -->
         <dependency>
